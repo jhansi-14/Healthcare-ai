@@ -14,3 +14,4 @@ def save_health(patient_id:int,heart_rate:int,steps:int,sleep_hours:float):
     db.add(record)
     db.commit()
     return {"message":"Health data saved"}
+    db.close()
