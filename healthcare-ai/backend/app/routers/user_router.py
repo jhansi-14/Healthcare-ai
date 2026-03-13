@@ -1,5 +1,5 @@
-from fast import APIRouter
-from backend.app.auth.auth_handler importcreate_token
+from fastapi import APIRouter
+from backend.app.auth.auth_handler import create_token
 router=APIRouter()
 @router.get("/login")
 def login():
