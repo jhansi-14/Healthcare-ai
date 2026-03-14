@@ -1,9 +1,12 @@
+import logging
 from fastapi import APIRouter
 from backend.app.database.db import SessionLocal
 from backend.app.database.models import HealthMetrics
 router=APIRouter()
+logger=logging.getLogger(__name__)
 @router.post("/health")
 def save_health(patient_id:int,heart_rate:int,steps:int,sleep_hours:float):
+    logger.info("Recieved health data for patient {patient_id}")
     db=SessionLocal()
     record=HealthMetrics(
         patient_id=patient_id,
@@ -13,5 +16,6 @@ def save_health(patient_id:int,heart_rate:int,steps:int,sleep_hours:float):
     )
     db.add(record)
     db.commit()
+    logger.info("Health data saved succesfully")
     return {"message":"Health data saved"}
     db.close()
