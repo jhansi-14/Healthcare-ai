@@ -21,7 +21,9 @@ def submit_health(data:healthInput):
         status="excellent"
     elif health_score>60:
         status="good"
-        return{"patient_name":data.patient_name,"health_score":round(health_score.2),"status":status,"symptom":data.symptom}    
+    else:
+        status="needs improvement"    
+        return{"patient_name":data.patient_name,"health_score":round(health_score,2),"status":status,"symptom":data.symptom}    
 
 @app.post("/health-analysis")
 
