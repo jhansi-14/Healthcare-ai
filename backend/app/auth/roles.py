@@ -1,0 +1,1 @@
+ROLES=["patient","doctor","caregiver"]
