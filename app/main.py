@@ -1,9 +1,14 @@
 from fastapi import FastAPI
+from app.auth import router as auth_router
+from app.health_routes import router as health_router
 from app.graph import build_graph
 from app.models import HealthInput
 from reports.report_generator import generate_report
 
-app = FastAPI()
+app = FastAPI(
+    title="healthcare ai agent",
+    description="track b healthcare monitoring system",version="1.0"
+)
 
 graph = build_graph()
 
@@ -20,3 +25,5 @@ def analyze_health(data: HealthInput):
         "analysis": result,
         "report": report
     }
+app.include_router(auth_router)
+app.include_router(health_router)
