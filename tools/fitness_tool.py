@@ -8,5 +8,5 @@ def analyze_fitness(steps,calories,sleep_hours):
         status="needs improvement"
     return{
         "fitness_score":score,
-        "status:status"
+        "status":status
     }            
