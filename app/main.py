@@ -14,17 +14,6 @@ graph = build_graph()
 @app.get("/")
 def home():
     return {"message":"healthcare ai agent is running"}
-@app.post("/health-data")
-def submit_health(data:healthInput):
-    health_score=(data.steps/10000)*50+(data.sleep_hours/8)*50
-    if health_score>80:
-        status="excellent"
-    elif health_score>60:
-        status="good"
-    else:
-        status="needs improvement"    
-        return{"patient_name":data.patient_name,"health_score":round(health_score,2),"status":status,"symptom":data.symptom}    
-
 @app.post("/health-analysis")
 
 def analyze_health(data: HealthInput):
