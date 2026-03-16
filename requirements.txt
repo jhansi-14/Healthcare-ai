@@ -9,3 +9,10 @@ langgraph
 python-jose
 passlib[bcrypt]
 python-dotenv
+scikit-learn
+numpy
+speechrecognition
+pydub
+pillow
+opencv-python
+requests
