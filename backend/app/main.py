@@ -9,13 +9,6 @@ app=FastAPI()
 Base.metadata.create_all(bind=engine)
 @app.get("/")
 def home():
-logging.basicConfig(level=logging.INFO)
-logger=logging.getLogger(__name__)
-app=FastAPI()    
-Base.metadata.create_all(bind=engine)
-logger.info("helthcare system started")
-@app.get("/")
-def home():
     logger.info("home endpoint called")
     return{"message":"Healthcare Agent Running"} 
 app.include_router(router) 
