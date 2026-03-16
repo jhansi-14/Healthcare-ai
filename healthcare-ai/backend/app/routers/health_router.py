@@ -24,3 +24,5 @@ def save_health(patient_id: int, heart_rate: int, steps: int, sleep_hours: float
     db.close()
 
     logger.info("Health data saved successfully")
+
+    return {"message": "Health data saved"}
